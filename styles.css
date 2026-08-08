@@ -47,8 +47,6 @@ button { font: inherit; }
 .contact-list li + li { margin-top: 11px; }
 .contact-list svg { flex: 0 0 auto; width: 16px; height: 16px; color: var(--teal); }
 .contact-list a:hover { color: var(--red); }
-.resume-link { display: inline-flex; align-items: center; gap: 8px; padding-bottom: 4px; border-bottom: 1px solid var(--ink); font-size: 13px; font-weight: 700; text-decoration: none; }
-.resume-link svg { width: 16px; }
 
 main { min-width: 0; }
 .section { padding: 54px 0; border-bottom: 1px solid var(--line); }
@@ -145,7 +143,6 @@ footer svg { width: 14px; }
   .profile-copy { align-self: end; }
   .contact-list { display: flex; flex-wrap: wrap; gap: 8px 18px; margin: 15px 0 12px; padding: 13px 0; }
   .contact-list li + li { margin: 0; }
-  .resume-link { width: max-content; }
   .intro { min-height: auto; }
   .featured-project { grid-template-columns: 1fr; grid-template-rows: 320px auto; }
 }
@@ -157,7 +154,7 @@ footer svg { width: 14px; }
   .profile-photo { width: 108px; }
   .profile h1 { font-size: 27px; }
   .profile-role { font-size: 12px; }
-  .contact-list, .resume-link { grid-column: 1 / -1; }
+  .contact-list { grid-column: 1 / -1; }
   .section { padding: 58px 0; }
   .intro { padding-top: 62px; }
   .intro h2 { font-size: 42px; }
