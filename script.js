@@ -2,7 +2,7 @@ const languageButton = document.querySelector('.language-toggle');
 const menuButton = document.querySelector('.menu-button');
 const navLinks = document.querySelector('.nav-links');
 const translatedElements = document.querySelectorAll('[data-cn][data-en]');
-let language = localStorage.getItem('portfolio-language') || 'cn';
+let language = localStorage.getItem('portfolio-language') || 'en';
 
 function applyLanguage(nextLanguage) {
   language = nextLanguage;
@@ -65,7 +65,7 @@ document.querySelectorAll('.award-group').forEach((group, groupIndex) => {
   });
 });
 const awardModal = document.querySelector('[data-award-modal]');
-const awardImage = document.querySelector('[data-award-image]');
+const awardImage = document.querySelector('[data-award-modal-image]');
 document.querySelectorAll('.award-list li').forEach((item) => {
   const openAward = () => { awardImage.src = item.dataset.awardImage; awardModal.showModal(); };
   item.addEventListener('click', openAward);
