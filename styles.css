@@ -47,6 +47,8 @@ button { font: inherit; }
 .contact-list li + li { margin-top: 11px; }
 .contact-list svg { flex: 0 0 auto; width: 16px; height: 16px; color: var(--teal); }
 .contact-list a:hover { color: var(--red); }
+.contact-button { display: flex; align-items: center; gap: 10px; padding: 0; border: 0; background: none; color: #464b51; cursor: pointer; font: inherit; }
+.contact-button:hover { color: var(--red); }
 
 main { min-width: 0; }
 .section { padding: 54px 0; border-bottom: 1px solid var(--line); }
@@ -125,6 +127,15 @@ main { min-width: 0; }
 .personal-honors p { margin: 0; color: var(--red); font-size: 10px; font-weight: 700; }
 .personal-honors div { display: flex; flex-wrap: wrap; gap: 8px; }
 .personal-honors span { padding: 5px 9px; border: 1px solid var(--line); border-radius: 3px; color: #50555b; font-size: 10px; font-weight: 600; }
+.award-list li { cursor: pointer; }
+.award-list li:hover strong { color: var(--red); }
+.award-modal, .wechat-modal { max-width: min(880px, calc(100% - 28px)); max-height: calc(100% - 40px); padding: 12px; border: 1px solid var(--line); background: var(--surface); }
+.award-modal::backdrop, .wechat-modal::backdrop { background: rgba(23,26,31,.62); }
+.award-modal img { display: block; max-width: 100%; max-height: calc(100vh - 70px); object-fit: contain; }
+.wechat-modal { max-width: min(470px, calc(100% - 28px)); }
+.wechat-modal img { display: block; width: 100%; }
+.modal-close { position: absolute; top: 8px; right: 8px; z-index: 1; display: grid; width: 32px; height: 32px; place-items: center; border: 1px solid var(--line); background: rgba(255,255,255,.9); cursor: pointer; }
+.modal-close svg { width: 16px; }
 
 footer { display: flex; justify-content: space-between; align-items: center; padding: 38px 0 60px; color: var(--muted); font-size: 12px; }
 footer a { display: inline-flex; align-items: center; gap: 7px; text-decoration: none; }

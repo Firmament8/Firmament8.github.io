@@ -49,7 +49,7 @@
       <ul class="contact-list">
         <li><i data-lucide="map-pin"></i><span data-cn="中国 · 南京" data-en="Nanjing, China">中国 · 南京</span></li>
         <li><a href="mailto:220253676@seu.edu.cn"><i data-lucide="mail"></i><span>Email</span></a></li>
-        <li><i data-lucide="message-circle"></i><span>WeChat · 15261688349</span></li>
+        <li><button class="contact-button" type="button" data-wechat-open><i data-lucide="message-circle"></i><span>WeChat</span></button></li>
         <li><a href="https://github.com/Firmament8" target="_blank" rel="noreferrer"><i data-lucide="github"></i><span>GitHub</span></a></li>
         <li><a href="https://orcid.org/0009-0007-4528-5336" target="_blank" rel="me noreferrer"><i data-lucide="badge-check"></i><span>ORCID</span></a></li>
         <li><a href="https://github.com/Firmament8/UAV_DET" target="_blank" rel="noreferrer"><i data-lucide="code-2"></i><span data-cn="代表代码" data-en="Featured code">代表代码</span></a></li>
@@ -136,7 +136,6 @@
         <div class="award-summary" aria-label="竞赛成果概览">
           <div><strong>6</strong><span data-cn="项国家级奖项" data-en="National awards">项国家级奖项</span></div>
           <div><strong>12</strong><span data-cn="项省级 / 区域奖项" data-en="Provincial / regional awards">项省级 / 区域奖项</span></div>
-          <p data-cn="以下根据获奖证书整理；个人证书与团队证书按同一奖项合并计算。" data-en="Compiled from award certificates; individual and team certificates for the same result are counted once.">以下根据获奖证书整理；个人证书与团队证书按同一奖项合并计算。</p>
         </div>
 
         <div class="award-columns">
@@ -173,7 +172,7 @@
 
         <div class="personal-honors">
           <p data-cn="其他代表荣誉" data-en="Other selected honors">其他代表荣誉</p>
-          <div><span data-cn="江苏省三好学生" data-en="Jiangsu Outstanding Student">江苏省三好学生</span><span data-cn="两次求是校长奖章" data-en="Two Qiushi President Medals">两次求是校长奖章</span><span data-cn="国家励志奖学金" data-en="National Encouragement Scholarship">国家励志奖学金</span><span data-cn="两次学业一等奖学金" data-en="Two First-class Academic Scholarships">两次学业一等奖学金</span></div>
+          <div><span data-cn="江苏省三好学生" data-en="Jiangsu Outstanding Student">江苏省三好学生</span><span data-cn="江苏大学学生最高荣誉求是校长奖章" data-en="Jiangsu University Qiushi President Medal, the highest student honor">江苏大学学生最高荣誉求是校长奖章</span><span data-cn="学业一等奖学金" data-en="First-class Academic Scholarship">学业一等奖学金</span></div>
         </div>
       </section>
 
@@ -183,5 +182,13 @@
       </footer>
     </main>
   </div>
+  <dialog class="award-modal" data-award-modal>
+    <button class="modal-close" type="button" data-award-close aria-label="关闭"><i data-lucide="x"></i></button>
+    <img data-award-image alt="获奖证书预览">
+  </dialog>
+  <dialog class="wechat-modal" data-wechat-modal>
+    <button class="modal-close" type="button" data-wechat-close aria-label="关闭"><i data-lucide="x"></i></button>
+    <img src="assets/wechat-qr.jpg" alt="微信二维码">
+  </dialog>
 </body>
 </html>

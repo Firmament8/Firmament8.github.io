@@ -50,4 +50,29 @@ const sectionObserver = new IntersectionObserver((entries) => {
 observedSections.forEach((section) => sectionObserver.observe(section));
 document.getElementById('year').textContent = new Date().getFullYear();
 applyLanguage(language);
+const awardImages = [
+  ['national-road.jpg', 'national-logistics.jpg', 'national-model.png', 'national-aigc.jpg', 'national-ai-creative.jpg', 'national-warehouse.jpg'],
+  ['provincial-road.jpg', 'provincial-engineering.png', 'provincial-internet-plus.jpg', 'provincial-aigc.jpg', 'provincial-model-2023.jpg', 'provincial-logistics.png', 'provincial-warehouse.jpg', 'provincial-model-2022.png', 'provincial-pioneer.png', 'provincial-creative.png', 'provincial-robot-ai.png', 'provincial-gold-seed.png']
+];
+document.querySelectorAll('.award-group').forEach((group, groupIndex) => {
+  const list = group.querySelector('.award-list');
+  const rank = (item) => { const text = item.textContent; return text.includes('一等奖') ? 1 : text.includes('二等奖') ? 2 : text.includes('三等奖') ? 3 : 4; };
+  [...list.children].sort((a, b) => rank(a) - rank(b)).forEach((item) => list.appendChild(item));
+  [...list.children].forEach((item, index) => {
+    item.dataset.awardImage = `assets/awards/${awardImages[groupIndex][index]}`;
+    item.setAttribute('tabindex', '0');
+    item.setAttribute('role', 'button');
+  });
+});
+const awardModal = document.querySelector('[data-award-modal]');
+const awardImage = document.querySelector('[data-award-image]');
+document.querySelectorAll('.award-list li').forEach((item) => {
+  const openAward = () => { awardImage.src = item.dataset.awardImage; awardModal.showModal(); };
+  item.addEventListener('click', openAward);
+  item.addEventListener('keydown', (event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); openAward(); } });
+});
+document.querySelector('[data-award-close]').addEventListener('click', () => awardModal.close());
+const wechatModal = document.querySelector('[data-wechat-modal]');
+document.querySelector('[data-wechat-open]').addEventListener('click', () => wechatModal.showModal());
+document.querySelector('[data-wechat-close]').addEventListener('click', () => wechatModal.close());
 window.addEventListener('DOMContentLoaded', () => window.lucide?.createIcons());
