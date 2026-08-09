@@ -117,12 +117,13 @@ main { min-width: 0; }
 .award-group header h3 { margin: 0; font: 700 21px/1.2 var(--serif); }
 .award-group header span { color: var(--red); font-size: 9px; font-weight: 700; }
 .award-list { margin: 0; padding: 0; list-style: none; }
-.award-list li { display: grid; grid-template-columns: 60px 1fr; gap: 12px; padding: 13px 0; border-bottom: 1px solid var(--line); }
+.award-list li { display: grid; grid-template-columns: 60px 1fr 54px; gap: 12px; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--line); }
 .award-list time { color: var(--teal); font-size: 9px; font-weight: 700; }
 .award-list div { min-width: 0; }
 .award-list strong, .award-list span { display: block; }
 .award-list strong { font: 600 13px/1.42 var(--serif); }
 .award-list span { margin-top: 3px; color: var(--muted); font-size: 9px; line-height: 1.5; }
+.award-thumbnail { width: 54px; height: 42px; border: 1px solid var(--line); object-fit: cover; background: #fff; }
 .personal-honors { display: grid; grid-template-columns: 135px 1fr; gap: 22px; margin-top: 28px; padding-top: 18px; border-top: 1px solid var(--line); }
 .personal-honors p { margin: 0; color: var(--red); font-size: 10px; font-weight: 700; }
 .personal-honors div { display: flex; flex-wrap: wrap; gap: 8px; }

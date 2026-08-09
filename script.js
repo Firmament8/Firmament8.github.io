@@ -56,12 +56,24 @@ const awardImages = [
 ];
 document.querySelectorAll('.award-group').forEach((group, groupIndex) => {
   const list = group.querySelector('.award-list');
-  const rank = (item) => { const text = item.textContent; return text.includes('一等奖') ? 1 : text.includes('二等奖') ? 2 : text.includes('三等奖') ? 3 : 4; };
+  const rank = (item) => {
+    const text = item.textContent;
+    if (text.includes('一等奖') || text.includes('1st Prize')) return 1;
+    if (text.includes('二等奖') || text.includes('2nd Prize')) return 2;
+    if (text.includes('三等奖') || text.includes('3rd Prize')) return 3;
+    return 4;
+  };
   [...list.children].sort((a, b) => rank(a) - rank(b)).forEach((item) => list.appendChild(item));
   [...list.children].forEach((item, index) => {
     item.dataset.awardImage = `assets/awards/${awardImages[groupIndex][index]}`;
     item.setAttribute('tabindex', '0');
     item.setAttribute('role', 'button');
+    const thumbnail = document.createElement('img');
+    thumbnail.className = 'award-thumbnail';
+    thumbnail.src = item.dataset.awardImage;
+    thumbnail.alt = '获奖证书缩略图';
+    thumbnail.loading = 'lazy';
+    item.appendChild(thumbnail);
   });
 });
 const awardModal = document.querySelector('[data-award-modal]');
